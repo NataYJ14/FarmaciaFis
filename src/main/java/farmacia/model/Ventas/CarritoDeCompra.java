@@ -1,4 +1,4 @@
-package farmacia.model;
+package farmacia.model.Ventas;
 
 import java.util.ArrayList;
 

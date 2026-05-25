@@ -1,6 +1,9 @@
-package farmacia.model;
+package farmacia.model.Usuario;
 
 import java.util.ArrayList;
+
+import farmacia.model.Ventas.CarritoDeCompra;
+import farmacia.model.Ventas.Orden;
 
 public class Cliente {
     private String nombreCliente;

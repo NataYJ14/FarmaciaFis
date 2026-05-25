@@ -1,9 +1,9 @@
-package farmacia.controller;
+package farmacia.model.Inventario;
 
 import java.util.ArrayList;
 
-import farmacia.model.API.IProducto;
-import farmacia.model.ProductoCompuesto;
+import farmacia.model.Producto.IProducto;
+import farmacia.model.Producto.ProductoCompuesto;
 
 public class Catalogo {
     private ArrayList<IProducto> catalogoProductos;

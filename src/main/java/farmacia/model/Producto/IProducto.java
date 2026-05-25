@@ -1,4 +1,4 @@
-package farmacia.model.API;
+package farmacia.model.Producto;
 
 public interface IProducto {
     double calcularPrecio();

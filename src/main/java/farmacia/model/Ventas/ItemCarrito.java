@@ -1,6 +1,6 @@
-package farmacia.model;
+package farmacia.model.Ventas;
 
-import farmacia.model.API.IProducto;
+import farmacia.model.Producto.IProducto;
 
 public class ItemCarrito {
     private IProducto iProducto;

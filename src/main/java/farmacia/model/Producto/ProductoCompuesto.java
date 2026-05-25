@@ -1,6 +1,5 @@
-package farmacia.model;
+package farmacia.model.Producto;
 
-import farmacia.model.API.IProducto;
 import java.util.ArrayList;
 
 public class ProductoCompuesto extends AProducto{

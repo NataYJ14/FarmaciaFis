@@ -1,6 +1,4 @@
-package farmacia.model;
-
-import farmacia.model.API.IProducto;
+package farmacia.model.Producto;
 
 public abstract class AProducto implements IProducto {
 
