@@ -10,8 +10,7 @@ public class ProductoIndividual extends AProducto{
     }
 
     @Override
-    public double calcularPrecio() {
-        //desarrollar metodo para calcular el precio
+    public double calcularPrecio() { //sería más como mostrar precio
         return precioUnitario;
     }
 
