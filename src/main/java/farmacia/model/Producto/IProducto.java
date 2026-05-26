@@ -1,6 +1,7 @@
 package farmacia.model.Producto;
 
 public interface IProducto {
-    double calcularPrecio();
+    void setNombreProducto(String nuevoNombre);
     String getNombreProducto();
+    double getPrecio();
 }

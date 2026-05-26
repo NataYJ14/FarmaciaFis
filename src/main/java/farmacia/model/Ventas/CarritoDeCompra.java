@@ -20,12 +20,17 @@ public class CarritoDeCompra {
         precioActual=actualizarPrecioActual();
     }
 
+    public void vaciarCarrito(){
+        productos.clear();
+        precioActual=0;
+    }
+
     public ArrayList<ItemCarrito> mostrarCarrito(){
         return productos;
     }
 
-    public Orden generarOrden(){
-        Orden nuevaOrden= new Orden(productos, precioActual);
+    public Orden generarOrden(double idOrden){
+        Orden nuevaOrden= new Orden(productos, precioActual,idOrden);
         return nuevaOrden;
     }
 
