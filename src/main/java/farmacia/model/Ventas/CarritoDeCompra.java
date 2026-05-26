@@ -12,23 +12,32 @@ public class CarritoDeCompra {
 
     public void agregarProducto(ItemCarrito item){
         productos.add(item);
-        actualizarPrecioActual();
+        precioActual=actualizarPrecioActual();
     }
 
     public void quitarProducto(ItemCarrito item){
         productos.remove(item);
-        actualizarPrecioActual();
+        precioActual=actualizarPrecioActual();
     }
 
     public ArrayList<ItemCarrito> mostrarCarrito(){
         return productos;
     }
 
-    public void generarOrden(){
-        //generar la orden con los datos (new Orden(datos))
+    public Orden generarOrden(){
+        Orden nuevaOrden= new Orden(productos, precioActual);
+        return nuevaOrden;
     }
 
-    private void actualizarPrecioActual(){
-        //idk volver a calcular el precio
+    private double actualizarPrecioActual(){
+        double total=0;
+        for(int i= 0;i<productos.size();i++){
+            total+=productos.get(i).getSubTotal();
+        }
+        return total;
+    }
+
+    public double getPrecioActual(){
+        return precioActual;
     }
 }

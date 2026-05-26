@@ -2,6 +2,7 @@ package farmacia.model.Ventas;
 
 import java.util.ArrayList;
 import java.util.Date;
+import com.google.gson.Gson;
 
 public class Orden {
     private Date fecha;
@@ -9,7 +10,7 @@ public class Orden {
     private double precioTotal;
     private EstadoOrden estado;
 
-    public Orden(Date fecha, ArrayList<ItemCarrito> listaDeItems,double precioTotal){
+    public Orden(ArrayList<ItemCarrito> listaDeItems,double precioTotal){
         this.fecha=new Date();
         this.listaDeItems=listaDeItems;
         this.precioTotal=precioTotal;
@@ -17,9 +18,9 @@ public class Orden {
     }
 
     public String mostrarResumen(){
-        String resumen="";
-        return resumen; //esto lo hice pq me estresa ver un error xd, 
-        // la variable no sirve de nada, se puede borrar :v
+        Gson gson = new Gson();
+        String resumen = gson.toJson(this);
+        return resumen;
     }
 
     public void cancelarOrden(){
@@ -29,4 +30,6 @@ public class Orden {
     public void confirmarOrden(){
         estado=EstadoOrden.CONFIRMADA;
     }
+
+
 }

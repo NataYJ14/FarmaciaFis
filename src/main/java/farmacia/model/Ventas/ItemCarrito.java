@@ -13,7 +13,7 @@ public class ItemCarrito {
     }
 
     //no se si privado o publico
-    private double calcularSubtotal() {
+    public double calcularSubtotal() {
         subTotal= iProducto.calcularPrecio() * cantidadProducto;
         return subTotal;
     }
