@@ -60,4 +60,16 @@ public class Cliente {
     public CarritoDeCompra getCarrito(){
         return carrito;
     }
+
+    public String getNombreCliente(){
+        return nombreCliente;
+    }
+
+    public int getEdad(){
+        return edad;
+    }
+
+    public String getCedula(){
+        return cedula;
+    }
 }
