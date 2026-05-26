@@ -1,20 +1,31 @@
 package farmacia.model.Inventario;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import farmacia.model.Producto.IProducto;
 import farmacia.model.Producto.ProductoCompuesto;
+import farmacia.model.Producto.ProductoIndividual;
 
 public class Catalogo {
-    private ArrayList<IProducto> catalogoProductos;
-    //private ArrayList<int> listaStock; //no se como ponerle las dimensiones :c
+    HashMap<IProducto, Integer> stockProductos;
 
     public Catalogo(){
-        catalogoProductos=new ArrayList<>();
+        stockProductos=new HashMap<>();
     }
 
-    public void crearProducto(String nombreProducto){
+    public void crearProductoIndividual(String nombreProducto, double precio, int stock){
+        IProducto nuevoProducto= new ProductoIndividual(nombreProducto,precio);
+        stockProductos.put(nuevoProducto, stock);
+    }
 
+    public void crearProductoCompuesto(String nombreProductoComp, String nombreProductoInd, double precio,int cantidadIndividual, int stock){
+        IProducto nuevoProducto= new ProductoCompuesto(nombreProducto);
+        stockProductos.put(nuevoProducto, stock);
+    }
+
+    public void agregarProductoComp(){
+        
     }
 
     public void eliminarProducto(String nombreProducto){
