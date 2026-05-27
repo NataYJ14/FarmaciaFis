@@ -29,7 +29,7 @@ public class Catalogo {
 
     public void eliminarProducto(String nombreProducto) {
         IProducto productoEliminar = null;
-        productoEliminar = bucarProducto(nombreProducto);
+        productoEliminar = buscarProducto(nombreProducto);
         if (productoEliminar != null) {
             stockProductos.remove(productoEliminar);
         }
@@ -37,7 +37,7 @@ public class Catalogo {
 
     public void modificarNombreProducto(String nombreProducto, String nuevoNombre) {
         IProducto productoModificar = null;
-        productoModificar = bucarProducto(nombreProducto);
+        productoModificar = buscarProducto(nombreProducto);
         if (productoModificar != null) {
             productoModificar.setNombreProducto(nuevoNombre);
         }
@@ -45,7 +45,7 @@ public class Catalogo {
 
     public void modificarStock(String nombreProducto, int nuevoStock) {
         IProducto productoModificar = null;
-        productoModificar = bucarProducto(nombreProducto);
+        productoModificar = buscarProducto(nombreProducto);
         if (productoModificar != null) {
             stockProductos.put(productoModificar, nuevoStock);
         }
@@ -53,13 +53,13 @@ public class Catalogo {
 
     public void modificarCantidadProducto(String nombreProdComp, int nuevaCantidad) {
         ProductoCompuesto productoModificar = null;
-        productoModificar = (ProductoCompuesto) bucarProducto(nombreProdComp);
+        productoModificar = (ProductoCompuesto) buscarProducto(nombreProdComp);
         if (productoModificar != null) {
             productoModificar.setCantidadProducto(nuevaCantidad);
         }
     }
 
-    public IProducto bucarProducto(String nombreProducto) {
+    public IProducto buscarProducto(String nombreProducto) {
         for (IProducto producto : stockProductos.keySet()) {
             if (producto.getNombreProducto().equalsIgnoreCase(nombreProducto)) {
                 return producto;
@@ -69,7 +69,22 @@ public class Catalogo {
     }
 
     public int consultarStock(String nombreProducto) {
-        IProducto result=bucarProducto(nombreProducto);
+        IProducto result = buscarProducto(nombreProducto);
         return stockProductos.get(result);
+    }
+
+    public void aumentarStock(IProducto producto, int cantidad) {
+        int stockActual = stockProductos.get(producto);
+
+        stockProductos.put(producto, stockActual + cantidad);
+    }
+
+    public void reducirStock(IProducto producto, int cantidad) {
+        int stockActual = stockProductos.get(producto);
+        stockProductos.put(producto, stockActual - cantidad);
+    }
+
+    public HashMap<IProducto, Integer> getStockProductos() {
+        return stockProductos;
     }
 }

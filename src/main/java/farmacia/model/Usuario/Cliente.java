@@ -13,8 +13,6 @@ public class Cliente {
     private CarritoDeCompra carrito;
     private ArrayList<Orden> ordenes;
 
-    // no se bien como inicializar el carrito ni las ordenes, pero probablemente van
-    // acá
     public Cliente(String nombreCliente, int edad, String cedula) {
         this.nombreCliente = nombreCliente;
         this.edad = edad;

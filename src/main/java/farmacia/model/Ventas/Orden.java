@@ -49,7 +49,7 @@ public class Orden {
         return precioTotal;
     }
 
-    public EstadoOrden gEstadoOrden(){
+    public EstadoOrden getEstadoOrden(){
         return estado;
     }
 
