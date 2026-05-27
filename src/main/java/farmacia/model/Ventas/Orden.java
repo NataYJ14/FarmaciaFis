@@ -6,13 +6,11 @@ import com.google.gson.Gson;
 
 public class Orden {
     private double idOrden;
-    private Date fecha;
     private ArrayList<ItemCarrito> listaDeItems;
     private double precioTotal;
     private EstadoOrden estado;
 
     public Orden(ArrayList<ItemCarrito> listaDeItems,double precioTotal,double idOrden){
-        this.fecha=new Date();
         this.listaDeItems=new ArrayList<>(listaDeItems);
         this.precioTotal=precioTotal;
         estado=EstadoOrden.PENDIENTE;
@@ -37,9 +35,6 @@ public class Orden {
         return idOrden;
     }
 
-    public Date getFecha(){
-        return fecha;
-    }
     
     public ArrayList<ItemCarrito> getListaItems(){
         return listaDeItems;
@@ -51,6 +46,10 @@ public class Orden {
 
     public EstadoOrden getEstadoOrden(){
         return estado;
+    }
+
+    public void setTotal(double total){
+        this.precioTotal=total;
     }
 
 

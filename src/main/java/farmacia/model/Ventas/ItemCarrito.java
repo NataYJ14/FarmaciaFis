@@ -5,39 +5,31 @@ import farmacia.model.Producto.IProducto;
 public class ItemCarrito {
     private IProducto iProducto;
     private int cantidadProducto;
-    private double subTotal;
 
     public ItemCarrito(IProducto producto, int cantidad) {
         this.iProducto = producto;
         this.cantidadProducto = cantidad;
     }
 
-    public double calcularSubtotal() {
-        subTotal= iProducto.getPrecio() * cantidadProducto;
-        return subTotal;
+    // Eliminamos las variables rígidas y hacemos que se calcule EN EL MOMENTO
+    public double getSubtotal() {
+        return iProducto.getPrecio() * cantidadProducto;
     }
 
     public void agregarUnidad(){
-        cantidadProducto+=1;
-        subTotal=calcularSubtotal();
+        cantidadProducto += 1;
     }
 
     public void eliminarUnidad(){
-        if(cantidadProducto>0){
-            cantidadProducto-=1;
+        if(cantidadProducto > 0){
+            cantidadProducto -= 1;
         }
-        subTotal=calcularSubtotal();
     }
 
-    public IProducto getProducto() {
-        return iProducto;
-    }
-
-    public int getCantidadProducto(){
-        return cantidadProducto;
-    }
-
-    public double getSubTotal(){
-        return subTotal;
+    public IProducto getProducto() { return iProducto; }
+    public int getCantidadProducto(){ return cantidadProducto; }
+    
+    public void setCantidad(int cantidad){
+        this.cantidadProducto = cantidad;
     }
 }

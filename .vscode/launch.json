@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FarmaciaApplication<farmacia_fis>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "farmacia.system.FarmaciaApplication",
+            "projectName": "farmacia_fis",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

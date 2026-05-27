@@ -42,6 +42,7 @@ public class ClienteController {
             for (int i = 0; i < cantidad; i++) {
                 itemExistente.agregarUnidad();
             }
+            cliente.getCarrito().actualizarPrecioActual();
             return true;
         }
         // SI NO EXISTE
@@ -58,6 +59,7 @@ public class ClienteController {
         item.eliminarUnidad();
         if (item.getCantidadProducto() <= 0) {
             cliente.eliminarDelCarrito(item);
+            cliente.getCarrito().actualizarPrecioActual();
             return true;
         }else{
             return false;
@@ -70,6 +72,7 @@ public class ClienteController {
         int stock = catalogo.consultarStock(nombreProducto);
         if (item.getCantidadProducto() < stock) {
             item.agregarUnidad();
+            cliente.getCarrito().actualizarPrecioActual();
             return true;
         }else{
             return false;
@@ -85,7 +88,7 @@ public class ClienteController {
     }
 
     public double obtenerTotalCarrito() {
-        return cliente.getCarrito().getPrecioActual();
+        return cliente.getCarrito().getTotal();
     }
 
     public ArrayList<Orden> verOrdenes() {
